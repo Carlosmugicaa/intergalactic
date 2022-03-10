@@ -11,9 +11,31 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nvc = segue.destination as! StarViewController
+    
+        let randomnumber = Int.random(in: 1...3)
+    
+        if segue.identifier == "redStar"
+        {
+            nvc.starName = "RedStar \(randomnumber)"
+            }
+    else
+    {
+        nvc.starName = "BlueStar \(randomnumber)"
+       
+    
+    
+    }
+    
+    
+    
+    
+    
+    }
+    
 }
 
